@@ -25,3 +25,18 @@ function updatePrice(itemID, price) {
     const total = document.getElementById('total-price');
     total.innerText = totalPrice;
 }
+
+const code = 'pHero';
+document.getElementById('apply-btn').addEventListener('click', function () {
+    const promoCode = document.getElementById('promo-input').value;
+    if (promoCode === code) {
+        const price1 = document.getElementById('total-price');
+        let price2 = parseFloat(price1.innerText);
+
+        const disPrice = (price2 * 20) / 100;
+        price2 = price2 - disPrice;
+
+        price1.innerText = price2;
+    } else
+        console.log('Wrong Promo Code');
+})
